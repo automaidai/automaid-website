@@ -55,22 +55,35 @@ export default function Home() {
 
   return (
     <main>
+      {/* NAVIGATION */}
       <header className="site-header">
-        <a href="#start" className="brand" aria-label="AUTOMAID Startseite">
-          AUTOMAID<span className="brand-dot">.</span>
+        <a
+          href="#start"
+          className="brand"
+          aria-label="AUTOMAID Startseite"
+        >
+          <img
+            src="/Automaid_Logo_2026.svg"
+            alt="AUTOMAID"
+            className="brand-logo"
+          />
         </a>
 
-        <nav className="nav-links">
+        <nav className="nav-links" aria-label="Hauptnavigation">
           <a href="#leistungen">Leistungen</a>
           <a href="#loesungen">Lösungen</a>
           <a href="#demo">Live-Demo</a>
         </nav>
 
-        <a className="nav-contact" href="mailto:info@automaid.net">
+        <a
+          className="nav-contact"
+          href="mailto:info@automaid.net"
+        >
           Kontakt ↗
         </a>
       </header>
 
+      {/* HERO */}
       <section className="hero" id="start">
         <div className="hero-content">
           <div className="eyebrow">
@@ -94,7 +107,11 @@ export default function Home() {
             <a className="button-primary" href="#leistungen">
               Möglichkeiten entdecken <span>↗</span>
             </a>
-            <a className="button-secondary" href="mailto:info@automaid.net">
+
+            <a
+              className="button-secondary"
+              href="mailto:info@automaid.net"
+            >
               Gespräch vereinbaren →
             </a>
           </div>
@@ -102,10 +119,13 @@ export default function Home() {
 
         <div className="hero-bottom">
           <span>AUTOMAID</span>
-          <span>Ihr Unternehmen. Intelligent unterstützt.</span>
+          <span>
+            Ihr Unternehmen. Intelligent unterstützt.
+          </span>
         </div>
       </section>
 
+      {/* ÜBER AUTOMAID */}
       <section className="intro-section">
         <div className="section-label">DIE IDEE</div>
 
@@ -124,9 +144,13 @@ export default function Home() {
         </p>
       </section>
 
+      {/* LEISTUNGEN */}
       <section className="services-section" id="leistungen">
         <div className="section-heading">
-          <div className="section-label">UNSERE LEISTUNGEN</div>
+          <div className="section-label">
+            UNSERE LEISTUNGEN
+          </div>
+
           <h2>
             Intelligente Lösungen.
             <br />
@@ -136,22 +160,35 @@ export default function Home() {
 
         <div className="services-grid">
           {services.map((service) => (
-            <article className="service-card" key={service.number}>
-              <span className="service-number">{service.number}</span>
+            <article
+              className="service-card"
+              key={service.number}
+            >
+              <span className="service-number">
+                {service.number}
+              </span>
 
               <div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
               </div>
 
-              <span className="service-arrow">↗</span>
+              <span
+                className="service-arrow"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
             </article>
           ))}
         </div>
       </section>
 
+      {/* UNSER ANSATZ */}
       <section className="statement-section">
-        <div className="section-label">UNSER ANSATZ</div>
+        <div className="section-label">
+          UNSER ANSATZ
+        </div>
 
         <h2>
           Nicht mehr Software.
@@ -166,9 +203,15 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="solutions-section" id="loesungen">
+      {/* ANWENDUNGSBEISPIELE */}
+      <section
+        className="solutions-section"
+        id="loesungen"
+      >
         <div className="section-heading">
-          <div className="section-label">ANWENDUNGSBEISPIELE</div>
+          <div className="section-label">
+            ANWENDUNGSBEISPIELE
+          </div>
 
           <h2>
             Was heute schon
@@ -179,13 +222,24 @@ export default function Home() {
 
         <div className="examples-grid">
           {examples.map((example) => (
-            <article className="example-card" key={example.title}>
-              <div className="example-visual">
-                <span className="visual-symbol">✳</span>
+            <article
+              className="example-card"
+              key={example.title}
+            >
+              <div
+                className="example-visual"
+                aria-hidden="true"
+              >
+                <span className="visual-symbol">
+                  ✳
+                </span>
               </div>
 
               <div className="example-body">
-                <span className="example-category">{example.category}</span>
+                <span className="example-category">
+                  {example.category}
+                </span>
+
                 <h3>{example.title}</h3>
                 <p>{example.description}</p>
               </div>
@@ -194,9 +248,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* INTERAKTIVE DEMO */}
       <section className="demo-section" id="demo">
         <div className="section-heading">
-          <div className="section-label">EXECUTIVE AI</div>
+          <div className="section-label">
+            EXECUTIVE AI
+          </div>
 
           <h2>
             Ihr Unternehmen.
@@ -205,42 +262,66 @@ export default function Home() {
           </h2>
 
           <p className="section-description">
-            So könnte Ihr persönlicher KI-Assistent aussehen:
-            Informationen bündeln, Prioritäten erkennen und
-            den Arbeitstag intelligent vorbereiten.
+            So könnte Ihr persönlicher KI-Assistent
+            aussehen: Informationen bündeln,
+            Prioritäten erkennen und den Arbeitstag
+            intelligent vorbereiten.
           </p>
         </div>
 
         <div className="demo-window">
           <div className="demo-topbar">
-            <div className="window-dots">
+            <div
+              className="window-dots"
+              aria-hidden="true"
+            >
               <i />
               <i />
               <i />
             </div>
 
-            <span>AUTOMAID / EXECUTIVE BRIEFING</span>
-            <span className="demo-status">● DEMO</span>
+            <span>
+              AUTOMAID / EXECUTIVE BRIEFING
+            </span>
+
+            <span className="demo-status">
+              ● DEMO
+            </span>
           </div>
 
           <div className="demo-inner">
             <div className="demo-header">
               <div>
-                <span className="demo-kicker">IHR PERSÖNLICHER ASSISTENT</span>
+                <span className="demo-kicker">
+                  IHR PERSÖNLICHER ASSISTENT
+                </span>
+
                 <h3>Guten Morgen.</h3>
-                <p>Hier ist Ihr Überblick für heute.</p>
+
+                <p>
+                  Hier ist Ihr Überblick für heute.
+                </p>
               </div>
 
               <div className="demo-toggle">
                 <button
-                  className={demo === "morgen" ? "active" : ""}
+                  type="button"
+                  className={
+                    demo === "morgen" ? "active" : ""
+                  }
                   onClick={() => setDemo("morgen")}
+                  aria-pressed={demo === "morgen"}
                 >
                   Morgen
                 </button>
+
                 <button
-                  className={demo === "fokus" ? "active" : ""}
+                  type="button"
+                  className={
+                    demo === "fokus" ? "active" : ""
+                  }
                   onClick={() => setDemo("fokus")}
+                  aria-pressed={demo === "fokus"}
                 >
                   Fokus
                 </button>
@@ -252,53 +333,72 @@ export default function Home() {
                 <div className="briefing-card">
                   <span>TERMINE</span>
                   <strong>03</strong>
-                  <p>Geplante Gespräche und Meetings</p>
+                  <p>
+                    Geplante Gespräche und Meetings
+                  </p>
                 </div>
 
                 <div className="briefing-card">
                   <span>E-MAILS</span>
                   <strong>08</strong>
-                  <p>Nachrichten mit Handlungsbedarf</p>
+                  <p>
+                    Nachrichten mit Handlungsbedarf
+                  </p>
                 </div>
 
                 <div className="briefing-card">
                   <span>PRIORITÄTEN</span>
                   <strong>02</strong>
-                  <p>Wichtige Aufgaben für heute</p>
+                  <p>
+                    Wichtige Aufgaben für heute
+                  </p>
                 </div>
               </div>
             ) : (
               <div className="focus-panel">
                 <span>HEUTE IM FOKUS</span>
-                <h4>Das Wesentliche zuerst.</h4>
+
+                <h4>
+                  Das Wesentliche zuerst.
+                </h4>
+
                 <p>
-                  Zwei Kundenanfragen benötigen eine Entscheidung.
-                  Ihr nächstes Meeting ist vorbereitet.
-                  Die wichtigsten Kennzahlen liegen bereit.
+                  Zwei Kundenanfragen benötigen eine
+                  Entscheidung. Ihr nächstes Meeting
+                  ist vorbereitet. Die wichtigsten
+                  Kennzahlen liegen bereit.
                 </p>
               </div>
             )}
 
             <div className="demo-note">
-              <span>✦</span>
+              <span aria-hidden="true">✦</span>
+
               <p>
-                <strong>KI-Zusammenfassung</strong>
+                <strong>
+                  KI-Zusammenfassung
+                </strong>
                 <br />
-                Ihr Assistent bündelt relevante Informationen
-                und hilft Ihnen, schneller Entscheidungen zu treffen.
+                Ihr Assistent bündelt relevante
+                Informationen und hilft Ihnen,
+                schneller Entscheidungen zu treffen.
               </p>
             </div>
           </div>
         </div>
 
         <p className="demo-disclaimer">
-          Interaktive Beispieldarstellung mit fiktiven Daten.
-          Keine Verbindung zu realen Unternehmenssystemen.
+          Interaktive Beispieldarstellung mit
+          fiktiven Daten. Keine Verbindung zu
+          realen Unternehmenssystemen.
         </p>
       </section>
 
+      {/* KONTAKT */}
       <section className="contact-section" id="kontakt">
-        <div className="section-label">KONTAKT</div>
+        <div className="section-label">
+          KONTAKT
+        </div>
 
         <h2>
           Bereit für
@@ -312,28 +412,50 @@ export default function Home() {
           einfacher und effizienter machen kann.
         </p>
 
-        <a className="button-primary" href="mailto:info@automaid.net">
+        <a
+          className="button-primary"
+          href="mailto:info@automaid.net"
+        >
           Jetzt Kontakt aufnehmen ↗
         </a>
 
-        <a className="contact-email" href="mailto:info@automaid.net">
+        <a
+          className="contact-email"
+          href="mailto:info@automaid.net"
+        >
           info@automaid.net
         </a>
       </section>
 
+      {/* FOOTER */}
       <footer className="site-footer">
         <div className="footer-top">
-          <span className="footer-brand">AUTOMAID.</span>
-          <span>Ihr Unternehmen. Intelligent unterstützt.</span>
+          <span className="footer-brand">
+            AUTOMAID.
+          </span>
+
+          <span>
+            Ihr Unternehmen. Intelligent unterstützt.
+          </span>
         </div>
 
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} AUTOMAID</span>
+          <span>
+            © {new Date().getFullYear()} AUTOMAID
+          </span>
 
           <div>
-            <a href="mailto:info@automaid.net">Kontakt</a>
-            <a href="/impressum">Impressum</a>
-            <a href="/datenschutz">Datenschutz</a>
+            <a href="mailto:info@automaid.net">
+              Kontakt
+            </a>
+
+            <a href="/impressum">
+              Impressum
+            </a>
+
+            <a href="/datenschutz">
+              Datenschutz
+            </a>
           </div>
         </div>
       </footer>
