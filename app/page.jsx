@@ -1,4 +1,342 @@
-'use client';
-import {useState} from 'react';
-const services=[{n:'01',tag:'EXECUTIVE AI',title:'Mehr Überblick. Weniger Routine.',description:'Persönliche KI-Assistenten für Geschäftsführung und Führungskräfte: Tagesbriefings, E-Mail-Vorbereitung, Terminübersichten und Entscheidungsvorlagen.',features:['Morning Briefings','E-Mail-Assistenz','Meeting-Vorbereitung']},{n:'02',tag:'BUSINESS AUTOMATION',title:'Prozesse, die für Sie arbeiten.',description:'Wir verbinden bestehende Systeme, automatisieren wiederkehrende Aufgaben und reduzieren manuelle Dateneingaben.',features:['Eingangs- & Bestellprozesse','Systemverknüpfungen','Intelligente Benachrichtigungen']},{n:'03',tag:'SMART REPORTING',title:'Klarheit auf Knopfdruck.',description:'Wichtige Kennzahlen, Berichte und Auffälligkeiten werden automatisch zusammengeführt und verständlich aufbereitet.',features:['Management-Reportings','Datenzusammenfassungen','Automatische Statusberichte']},{n:'04',tag:'AI SOLUTIONS',title:'Genau das, was Sie brauchen.',description:'Individuelle digitale Werkzeuge, KI-gestützte Mitarbeiterportale und einfache Anwendungen für Ihren konkreten Arbeitsalltag.',features:['Interne Assistenten','Individuelle Formulare','Digitale Workflows']}];
-export default function Home(){const [demo,setDemo]=useState('morgen');return <main><section className="hero" id="start"><div className="shell"><header className="nav"><a className="brand" href="#start" aria-label="AUTOMAID Startseite"><span className="wordmark">automaid<span className="dot">.</span></span></a><nav><a href="#leistungen">Leistungen</a><a href="#praxis">Praxis</a><a href="#kontakt">Kontakt ↗</a></nav></header><div className="heroBody"><p className="eyebrow light">KI-BERATUNG & INTELLIGENTE AUTOMATISIERUNG</p><h1>Ihr Unternehmen.<br/><em>Intelligent</em> unterstützt.</h1><p className="heroText">Wir unterstützen Unternehmen mit einfachen, maßgeschneiderten KI-Lösungen, die tägliche Abläufe erleichtern, Mitarbeiter entlasten und Geschäftsführern mehr Freiraum verschaffen.</p><div className="actions"><a className="btn white" href="#leistungen">Lösungen entdecken <span>↗</span></a><a className="textLink" href="#kontakt">Beratung vereinbaren ↗</a></div></div><div className="heroBottom"><span>WENIGER ROUTINE. MEHR FREIRAUM.</span><span>SCROLLEN ↓</span></div></div><img className="originalMark" src="/automaid-original.png" alt="Original AUTOMAID Markenzeichen" /></section><section className="intro shell"><p className="eyebrow">UNSER ANSPRUCH</p><h2>KI soll nicht komplizierter machen.<br/><span>Sie soll Arbeit abnehmen.</span></h2><p>Wir setzen dort an, wo im Unternehmensalltag Zeit verloren geht: bei Routinen, Abstimmungen, Datentransfers und Reportings. Pragmatisch, individuell und mit Blick auf den tatsächlichen Nutzen.</p></section><section className="services" id="leistungen"><div className="shell"><div className="sectionHead"><p className="eyebrow">WAS WIR FÜR SIE TUN</p><h2>Intelligente Lösungen.<br/>Spürbare Entlastung.</h2></div><div className="serviceGrid">{services.map(s=><article className="service" key={s.n}><div className="serviceTop"><span>{s.n} / {s.tag}</span><span>↗</span></div><h3>{s.title}</h3><p>{s.description}</p><div className="chips">{s.features.map(f=><span key={f}>{f}</span>)}</div></article>)}</div></div></section><section className="demo shell" id="demo"><div className="demoText"><p className="eyebrow">AUTOMAID IN AKTION</p><h2>Ihr Tag.<br/>Schon vorbereitet.</h2><p>So könnte ein persönliches Geschäftsführer-Briefing aussehen. Die folgende Ansicht ist eine beispielhafte Demonstration mit fiktiven Daten.</p><div className="segmented"><button className={demo==='morgen'?'active':''} onClick={()=>setDemo('morgen')}>Morgen-Briefing</button><button className={demo==='abend'?'active':''} onClick={()=>setDemo('abend')}>Tagesabschluss</button></div></div><div className="demoCard"><div className="demoHeader"><span>● AUTOMAID / EXECUTIVE</span><span>DEMO</span></div><div className="demoInner"><p className="muted">{demo==='morgen'?'GUTEN MORGEN':'GUTEN ABEND'}</p><h3>{demo==='morgen'?'Alles Wichtige. Auf einen Blick.':'Ihr Tag. Auf den Punkt.'}</h3><div className="demoRow"><span>{demo==='morgen'?'Termine heute':'Erledigte Vorgänge'}</span><strong>{demo==='morgen'?'03':'12'}</strong></div><div className="demoRow"><span>{demo==='morgen'?'Vorsortierte Kundenanfragen':'Offene Rückmeldungen'}</span><strong>{demo==='morgen'?'08':'02'}</strong></div><div className="demoRow"><span>{demo==='morgen'?'Vorgänge zur Entscheidung':'Erstellte Berichte'}</span><strong>{demo==='morgen'?'02':'04'}</strong></div><div className="demoNotice"><span>✦</span><p>{demo==='morgen'?'Ihr Wochenreport liegt bereit. Zwei Vorgänge benötigen Ihre Freigabe.':'Die wichtigsten Ergebnisse wurden zusammengefasst. Offene Punkte sind für morgen vorgemerkt.'}</p></div></div><div className="demoFooter">SIMULIERTE ANSICHT · KEINE ECHTEN UNTERNEHMENSDATEN</div></div></section><section className="cases" id="praxis"><div className="shell"><p className="eyebrow light">AUS DER PRAXIS</p><h2>Keine Theorie.<br/><em>Konkrete Anwendungen.</em></h2><div className="caseGrid"><article><span>01 / WORKFLOWS</span><h3>Informationen automatisch verarbeiten.</h3><p>Eingehende Anfragen und Dateien strukturiert erfassen, weiterleiten und dokumentieren – statt alles manuell zu übertragen.</p></article><article><span>02 / CONTENT</span><h3>Kommunikation effizient vorbereiten.</h3><p>KI-gestützte Texte, Audioinhalte und wiederkehrende Veröffentlichungsabläufe für bestehende Kanäle.</p></article><article><span>03 / MONITORING</span><h3>Wissen, wenn etwas nicht läuft.</h3><p>Automatisierte Prozesse überwachen und nur bei relevanten Problemen Benachrichtigungen auslösen.</p></article></div><p className="caseFoot">Die Anwendungsfelder basieren auf Erfahrungen aus eigenen Digital- und Automatisierungsprojekten.</p></div></section><section className="process shell"><p className="eyebrow">SO ARBEITEN WIR</p><h2>Einfach anfangen.<br/>Sinnvoll automatisieren.</h2><div className="steps"><div><span>01</span><h3>Verstehen</h3><p>Wir identifizieren die Aufgaben, die im Alltag unnötig Zeit kosten.</p></div><div><span>02</span><h3>Umsetzen</h3><p>Wir entwickeln passende Lösungen und verbinden vorhandene Werkzeuge.</p></div><div><span>03</span><h3>Verbessern</h3><p>Wir begleiten den Betrieb und optimieren, was im Alltag wirklich hilft.</p></div></div></section><section className="contact" id="kontakt"><div className="shell"><p className="eyebrow light">KONTAKT</p><h2>Weniger Aufwand.<br/><em>Mehr Möglichkeiten.</em></h2><p>Erzählen Sie uns, welche Abläufe Sie vereinfachen möchten. Gemeinsam finden wir einen sinnvollen Einstieg.</p><a className="btn white" href="mailto:beratung@automaid.net?subject=Anfrage%20zur%20KI-Beratung">Gespräch anfragen <span>↗</span></a><footer><span className="wordmark">automaid<span className="dot">.</span></span><span>Ihr Unternehmen. Intelligent unterstützt.</span><span>© {new Date().getFullYear()} AUTOMAID</span></footer></div></section></main>}
+"use client";
+
+import { useState } from "react";
+
+const services = [
+  {
+    number: "01",
+    title: "Executive AI",
+    description:
+      "Ihr persönlicher KI-Assistent. Termine, Informationen und Aufgaben intelligent organisieren.",
+  },
+  {
+    number: "02",
+    title: "Business Automation",
+    description:
+      "Wiederkehrende Abläufe automatisieren. Weniger manuelle Arbeit, mehr Zeit für Ihr Geschäft.",
+  },
+  {
+    number: "03",
+    title: "Smart Reporting",
+    description:
+      "Wichtige Kennzahlen automatisch aufbereiten. Klar verständlich und genau dann, wenn Sie sie brauchen.",
+  },
+  {
+    number: "04",
+    title: "AI Solutions",
+    description:
+      "Individuelle KI-Lösungen, die sich an Ihr Unternehmen anpassen. Nicht umgekehrt.",
+  },
+];
+
+const examples = [
+  {
+    category: "AUTOMATISIERUNG",
+    title: "Weniger Klicks. Mehr Zeit.",
+    description:
+      "Eingehende Anfragen automatisch erfassen, strukturieren und an die richtigen Stellen weiterleiten.",
+  },
+  {
+    category: "KÜNSTLICHE INTELLIGENZ",
+    title: "Inhalte, die sich selbst vorbereiten.",
+    description:
+      "KI-gestützte Erstellung von Texten, Audiobeiträgen und regelmäßigen Informationen.",
+  },
+  {
+    category: "SMART REPORTING",
+    title: "Alles Wichtige auf einen Blick.",
+    description:
+      "Daten aus verschiedenen Systemen zusammenführen und automatisch verständlich aufbereiten.",
+  },
+];
+
+export default function Home() {
+  const [demo, setDemo] = useState("morgen");
+
+  return (
+    <main>
+      <header className="site-header">
+        <a href="#start" className="brand" aria-label="AUTOMAID Startseite">
+          AUTOMAID<span className="brand-dot">.</span>
+        </a>
+
+        <nav className="nav-links">
+          <a href="#leistungen">Leistungen</a>
+          <a href="#loesungen">Lösungen</a>
+          <a href="#demo">Live-Demo</a>
+        </nav>
+
+        <a className="nav-contact" href="mailto:info@automaid.net">
+          Kontakt ↗
+        </a>
+      </header>
+
+      <section className="hero" id="start">
+        <div className="hero-content">
+          <div className="eyebrow">
+            KI-BERATUNG & INTELLIGENTE AUTOMATISIERUNG
+          </div>
+
+          <h1>
+            Weniger Routine.
+            <br />
+            <span>Mehr Freiraum.</span>
+          </h1>
+
+          <p className="hero-description">
+            Wir machen künstliche Intelligenz für den Mittelstand
+            einfach nutzbar. Mit maßgeschneiderten Lösungen, die
+            Mitarbeiter entlasten und Geschäftsführern mehr Zeit
+            für das Wesentliche verschaffen.
+          </p>
+
+          <div className="hero-actions">
+            <a className="button-primary" href="#leistungen">
+              Möglichkeiten entdecken <span>↗</span>
+            </a>
+            <a className="button-secondary" href="mailto:info@automaid.net">
+              Gespräch vereinbaren →
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-bottom">
+          <span>AUTOMAID</span>
+          <span>Ihr Unternehmen. Intelligent unterstützt.</span>
+        </div>
+      </section>
+
+      <section className="intro-section">
+        <div className="section-label">DIE IDEE</div>
+
+        <h2>
+          Technologie sollte
+          <br />
+          Arbeit <span>leichter machen.</span>
+        </h2>
+
+        <p>
+          Künstliche Intelligenz muss nicht kompliziert sein.
+          Wir entwickeln einfache, maßgeschneiderte Lösungen,
+          die sich nahtlos in Ihren Arbeitsalltag integrieren.
+          Persönlich, verständlich und mit einem klaren Ziel:
+          mehr Freiraum für die Menschen in Ihrem Unternehmen.
+        </p>
+      </section>
+
+      <section className="services-section" id="leistungen">
+        <div className="section-heading">
+          <div className="section-label">UNSERE LEISTUNGEN</div>
+          <h2>
+            Intelligente Lösungen.
+            <br />
+            <span>Spürbare Entlastung.</span>
+          </h2>
+        </div>
+
+        <div className="services-grid">
+          {services.map((service) => (
+            <article className="service-card" key={service.number}>
+              <span className="service-number">{service.number}</span>
+
+              <div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+
+              <span className="service-arrow">↗</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="statement-section">
+        <div className="section-label">UNSER ANSATZ</div>
+
+        <h2>
+          Nicht mehr Software.
+          <br />
+          <span>Sondern weniger Arbeit.</span>
+        </h2>
+
+        <p>
+          Wir schauen zuerst auf Ihre täglichen Abläufe.
+          Dann entwickeln wir die KI-Lösung, die tatsächlich
+          einen Unterschied macht.
+        </p>
+      </section>
+
+      <section className="solutions-section" id="loesungen">
+        <div className="section-heading">
+          <div className="section-label">ANWENDUNGSBEISPIELE</div>
+
+          <h2>
+            Was heute schon
+            <br />
+            <span>möglich ist.</span>
+          </h2>
+        </div>
+
+        <div className="examples-grid">
+          {examples.map((example) => (
+            <article className="example-card" key={example.title}>
+              <div className="example-visual">
+                <span className="visual-symbol">✳</span>
+              </div>
+
+              <div className="example-body">
+                <span className="example-category">{example.category}</span>
+                <h3>{example.title}</h3>
+                <p>{example.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="demo-section" id="demo">
+        <div className="section-heading">
+          <div className="section-label">EXECUTIVE AI</div>
+
+          <h2>
+            Ihr Unternehmen.
+            <br />
+            <span>Auf einen Blick.</span>
+          </h2>
+
+          <p className="section-description">
+            So könnte Ihr persönlicher KI-Assistent aussehen:
+            Informationen bündeln, Prioritäten erkennen und
+            den Arbeitstag intelligent vorbereiten.
+          </p>
+        </div>
+
+        <div className="demo-window">
+          <div className="demo-topbar">
+            <div className="window-dots">
+              <i />
+              <i />
+              <i />
+            </div>
+
+            <span>AUTOMAID / EXECUTIVE BRIEFING</span>
+            <span className="demo-status">● DEMO</span>
+          </div>
+
+          <div className="demo-inner">
+            <div className="demo-header">
+              <div>
+                <span className="demo-kicker">IHR PERSÖNLICHER ASSISTENT</span>
+                <h3>Guten Morgen.</h3>
+                <p>Hier ist Ihr Überblick für heute.</p>
+              </div>
+
+              <div className="demo-toggle">
+                <button
+                  className={demo === "morgen" ? "active" : ""}
+                  onClick={() => setDemo("morgen")}
+                >
+                  Morgen
+                </button>
+                <button
+                  className={demo === "fokus" ? "active" : ""}
+                  onClick={() => setDemo("fokus")}
+                >
+                  Fokus
+                </button>
+              </div>
+            </div>
+
+            {demo === "morgen" ? (
+              <div className="briefing-grid">
+                <div className="briefing-card">
+                  <span>TERMINE</span>
+                  <strong>03</strong>
+                  <p>Geplante Gespräche und Meetings</p>
+                </div>
+
+                <div className="briefing-card">
+                  <span>E-MAILS</span>
+                  <strong>08</strong>
+                  <p>Nachrichten mit Handlungsbedarf</p>
+                </div>
+
+                <div className="briefing-card">
+                  <span>PRIORITÄTEN</span>
+                  <strong>02</strong>
+                  <p>Wichtige Aufgaben für heute</p>
+                </div>
+              </div>
+            ) : (
+              <div className="focus-panel">
+                <span>HEUTE IM FOKUS</span>
+                <h4>Das Wesentliche zuerst.</h4>
+                <p>
+                  Zwei Kundenanfragen benötigen eine Entscheidung.
+                  Ihr nächstes Meeting ist vorbereitet.
+                  Die wichtigsten Kennzahlen liegen bereit.
+                </p>
+              </div>
+            )}
+
+            <div className="demo-note">
+              <span>✦</span>
+              <p>
+                <strong>KI-Zusammenfassung</strong>
+                <br />
+                Ihr Assistent bündelt relevante Informationen
+                und hilft Ihnen, schneller Entscheidungen zu treffen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p className="demo-disclaimer">
+          Interaktive Beispieldarstellung mit fiktiven Daten.
+          Keine Verbindung zu realen Unternehmenssystemen.
+        </p>
+      </section>
+
+      <section className="contact-section" id="kontakt">
+        <div className="section-label">KONTAKT</div>
+
+        <h2>
+          Bereit für
+          <br />
+          <span>mehr Freiraum?</span>
+        </h2>
+
+        <p>
+          Lassen Sie uns gemeinsam herausfinden,
+          wie künstliche Intelligenz Ihr Unternehmen
+          einfacher und effizienter machen kann.
+        </p>
+
+        <a className="button-primary" href="mailto:info@automaid.net">
+          Jetzt Kontakt aufnehmen ↗
+        </a>
+
+        <a className="contact-email" href="mailto:info@automaid.net">
+          info@automaid.net
+        </a>
+      </section>
+
+      <footer className="site-footer">
+        <div className="footer-top">
+          <span className="footer-brand">AUTOMAID.</span>
+          <span>Ihr Unternehmen. Intelligent unterstützt.</span>
+        </div>
+
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} AUTOMAID</span>
+
+          <div>
+            <a href="mailto:info@automaid.net">Kontakt</a>
+            <a href="/impressum">Impressum</a>
+            <a href="/datenschutz">Datenschutz</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
