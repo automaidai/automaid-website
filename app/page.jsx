@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+const whatsappUrl = "https://wa.me/4917632174763?text=Hallo%20Gregor%2C%20ich%20interessiere%20mich%20f%C3%BCr%20AUTOMAID%20und%20KI-L%C3%B6sungen%20f%C3%BCr%20mein%20Unternehmen.";
+
 const services = [
   {
     number: "01",
@@ -66,6 +68,26 @@ function ServiceIcon({ number }) {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[number]}</svg>;
 }
 
+function WhatsAppIcon() {
+  return <svg className="whatsapp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.6-4.8A8.5 8.5 0 1 1 20.5 11.5Z" /><path d="M8.5 7.5c-.7 0-1.1.6-1.1 1.4 0 2.8 3.5 6.3 6.3 6.3.8 0 1.4-.4 1.4-1.1l-1.8-1-1 .7a8 8 0 0 1-3.1-3.1l.7-1-1-2.2Z" /></svg>;
+}
+
+function MorningBriefing() {
+  return (
+    <aside className="morning-briefing" aria-labelledby="morning-title">
+      <div className="morning-topline"><span><span className="briefing-dot" /> DEIN KI-ASSISTENT</span><span>07:30</span></div>
+      <div className="morning-greeting"><span className="morning-sun" aria-hidden="true">☀</span><p>DEIN TAG. GUT VORBEREITET.</p><h2 id="morning-title">Guten Morgen, Chef.</h2><p>Dein Überblick ist da. Der Kaffee kann kommen.</p></div>
+      <div className="morning-agenda">
+        <div className="morning-row"><span className="morning-icon"><ServiceIcon number="01" /></span><div><span className="morning-label">DEINE TERMINE</span><strong>09:30 · Projektgespräch</strong><p>Agenda und Unterlagen sind vorbereitet.</p></div></div>
+        <div className="morning-row"><span className="morning-icon"><ServiceIcon number="02" /></span><div><span className="morning-label">DEIN POSTEINGANG</span><strong>3 Nachrichten brauchen dich.</strong><p>Das Wichtigste zusammengefasst und priorisiert.</p></div></div>
+        <div className="morning-row"><span className="morning-icon"><ServiceIcon number="04" /></span><div><span className="morning-label">DEIN FOKUS</span><strong>Das Angebot für deinen Kunden.</strong><p>Der Entwurf liegt bereit. Du gibst ihn frei.</p></div></div>
+      </div>
+      <a className="morning-demo-link" href="#demo">So könnte dein Morgen aussehen <span aria-hidden="true">↗</span></a>
+      <p className="morning-disclaimer">Beispielbriefing mit fiktiven Daten.</p>
+    </aside>
+  );
+}
+
 export default function Home() {
   const [demo, setDemo] = useState("morgen");
 
@@ -92,16 +114,17 @@ export default function Home() {
         </nav>
 
         <a
-          className="nav-contact"
-          href="mailto:info@automaid.net"
+          className="nav-contact whatsapp-link"
+          href={whatsappUrl} target="_blank" rel="noopener noreferrer"
         >
-          Kontakt ↗
+          <WhatsAppIcon /> WhatsApp ↗
         </a>
       </header>
 
       {/* HERO */}
       <section className="hero" id="start">
-        <div className="hero-content">
+        <div className="hero-content hero-intro-grid">
+          <div className="hero-copy">
           <div className="eyebrow">
             KI-BERATUNG & INTELLIGENTE AUTOMATISIERUNG
           </div>
@@ -125,12 +148,14 @@ export default function Home() {
             </a>
 
             <a
-              className="button-secondary"
-              href="mailto:info@automaid.net"
+              className="button-secondary whatsapp-link"
+              href={whatsappUrl} target="_blank" rel="noopener noreferrer"
             >
-              Gespräch vereinbaren →
+              <WhatsAppIcon /> Schreib mir auf WhatsApp
             </a>
           </div>
+          </div>
+          <MorningBriefing />
         </div>
 
         <figure className="hero-photo">
@@ -430,10 +455,10 @@ export default function Home() {
         </p>
 
         <a
-          className="button-primary"
-          href="mailto:info@automaid.net"
+          className="button-primary whatsapp-button"
+          href={whatsappUrl} target="_blank" rel="noopener noreferrer"
         >
-          Jetzt Kontakt aufnehmen ↗
+          <WhatsAppIcon /> Jetzt auf WhatsApp schreiben
         </a>
 
         <a
@@ -462,8 +487,8 @@ export default function Home() {
           </span>
 
           <div>
-            <a href="mailto:info@automaid.net">
-              Kontakt
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              WhatsApp
             </a>
 
             <a href="/impressum">

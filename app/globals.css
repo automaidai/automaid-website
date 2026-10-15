@@ -764,3 +764,50 @@ section {
 @media (prefers-reduced-motion: reduce) {
   .example-visual img { transition: none; }
 }
+
+/* Direct contact and morning briefing */
+.whatsapp-link { display: inline-flex; align-items: center; gap: 8px; }
+.whatsapp-icon { width: 21px; height: 21px; flex: 0 0 auto; }
+.whatsapp-link:hover { color: #167548; }
+.whatsapp-button { background: #176b47; gap: 12px; }
+.whatsapp-button:hover { background: #125537; }
+.hero-intro-grid { width: 100%; max-width: 1240px; display: grid; grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: center; text-align: left; }
+.hero-copy { min-width: 0; }
+.hero-intro-grid h1 { font-size: clamp(48px, 5.5vw, 78px); }
+.hero-intro-grid .eyebrow { line-height: 1.7; letter-spacing: 1.5px; }
+.hero-intro-grid .hero-description { margin: 0; font-size: 17px; }
+.hero-intro-grid .hero-actions { align-items: flex-start; justify-content: flex-start; flex-direction: column; gap: 22px; }
+.morning-briefing { padding: 28px; border: 1px solid var(--line); border-radius: 24px; background: white; box-shadow: 0 20px 70px rgba(29,29,31,.08); }
+.morning-topline { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: 1px; }
+.morning-topline > span:first-child { display: flex; align-items: center; gap: 7px; }
+.briefing-dot { width: 6px; height: 6px; background: #24805c; border-radius: 50%; }
+.morning-greeting { padding: 28px 0 24px; }
+.morning-sun { display: block; color: #b58b43; font-size: 29px; margin-bottom: 12px; }
+.morning-greeting > p:first-of-type { font-size: 9px; font-weight: 700; letter-spacing: 1.6px; }
+.morning-greeting h2 { margin: 10px 0; font-size: clamp(25px, 2.5vw, 34px); letter-spacing: -1.3px; line-height: 1.2; }
+.morning-greeting p { color: var(--muted); margin: 0; font-size: 13px; line-height: 1.6; }
+.morning-agenda { display: grid; gap: 18px; }
+.morning-row { display: flex; gap: 13px; padding-top: 18px; border-top: 1px solid var(--line); }
+.morning-icon { flex: 0 0 34px; width: 34px; height: 34px; padding: 7px; color: var(--accent); background: #f0f7ff; border-radius: 10px; }
+.morning-icon svg { display: block; width: 20px; height: 20px; }
+.morning-label { display: block; color: var(--muted); font-size: 9px; letter-spacing: 1.2px; margin-bottom: 6px; font-weight: 600; }
+.morning-row strong { display: block; font-size: 13px; line-height: 1.5; }
+.morning-row p { margin: 4px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.morning-demo-link { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 24px; padding: 15px; border-radius: 12px; background: var(--surface); font-size: 12px; font-weight: 600; }
+.morning-demo-link:hover { color: var(--accent); }
+.morning-disclaimer { margin: 12px 0 0; font-size: 10px; color: var(--muted); text-align: center; }
+@media (max-width: 1000px) {
+  .hero-intro-grid { gap: 32px; grid-template-columns: 1fr 1fr; }
+  .morning-briefing { padding: 22px; }
+}
+@media (max-width: 760px) {
+  .hero-intro-grid { grid-template-columns: 1fr; gap: 44px; max-width: 560px; }
+  .hero-intro-grid h1 { font-size: clamp(44px, 9vw, 64px); }
+  .morning-greeting h2 { font-size: 30px; }
+}
+@media (max-width: 380px) {
+  .nav-contact { font-size: 12px; gap: 5px; }
+  .morning-briefing { padding: 18px; }
+  .morning-greeting h2 { font-size: 27px; }
+  .whatsapp-button { padding: 17px 20px; font-size: 13px; }
+}
