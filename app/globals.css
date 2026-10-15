@@ -739,3 +739,28 @@ section {
     transition: none;
   }
 }
+
+/* Editorial photography and service icons */
+.hero { gap: 64px; padding-top: 110px; }
+.hero-photo { position: relative; margin: 0; border-radius: 24px; overflow: hidden; background: var(--surface); text-align: left; }
+.hero-photo > img { display: block; width: 100%; height: clamp(280px, 34vw, 460px); object-fit: cover; object-position: center 55%; }
+.hero-photo figcaption { position: absolute; left: 28px; bottom: 28px; display: flex; align-items: center; gap: 14px; padding: 18px 24px; border: 1px solid rgba(255,255,255,.7); border-radius: 16px; background: rgba(255,255,255,.94); color: var(--text); font-size: 13px; line-height: 1.6; }
+.photo-caption-icon { display: flex; color: var(--accent); }
+.photo-caption-icon svg { width: 30px; height: 30px; }
+.service-card-top { display: flex; align-items: center; justify-content: space-between; }
+.service-icon { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border: 1px solid var(--line); border-radius: 16px; background: white; color: var(--accent); }
+.service-icon svg { width: 27px; height: 27px; }
+.example-visual { overflow: hidden; background: #e8e8ed; }
+.example-visual img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.example-card:hover .example-visual img { transform: scale(1.035); }
+@media (max-width: 600px) {
+  .hero { gap: 40px; padding-top: 85px; }
+  .hero-photo { border-radius: 18px; }
+  .hero-photo > img { height: 300px; }
+  .hero-photo figcaption { left: 14px; right: 14px; bottom: 14px; padding: 14px 16px; font-size: 12px; }
+  .service-icon { width: 48px; height: 48px; border-radius: 14px; }
+  .example-visual { height: 230px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .example-visual img { transition: none; }
+}

@@ -32,23 +32,39 @@ const services = [
 const examples = [
   {
     category: "AUTOMATISIERUNG",
+    image: "photo-1497215728101-856f4ea42174",
+    alt: "Heller Arbeitsplatz mit Laptop und Blick ins Grüne",
     title: "Weniger Klicks. Mehr Zeit.",
     description:
       "Eingehende Anfragen automatisch erfassen, strukturieren und an die richtigen Stellen weiterleiten.",
   },
   {
     category: "KÜNSTLICHE INTELLIGENZ",
+    image: "photo-1521737711867-e3b97375f902",
+    alt: "Menschen arbeiten gemeinsam an einem Projekt",
     title: "Inhalte, die sich selbst vorbereiten.",
     description:
       "KI-gestützte Erstellung von Texten, Audiobeiträgen und regelmäßigen Informationen.",
   },
   {
     category: "SMART REPORTING",
+    image: "photo-1460925895917-afdab827c52f",
+    alt: "Laptop mit Diagrammen und digitalen Auswertungen",
     title: "Alles Wichtige auf einen Blick.",
     description:
       "Daten aus verschiedenen Systemen zusammenführen und automatisch verständlich aufbereiten.",
   },
 ];
+
+function ServiceIcon({ number }) {
+  const paths = {
+    "01": <><rect x="4" y="5" width="16" height="16" rx="3" /><path d="M8 3v4m8-4v4M4 11h16m-12 4h3m-3 3h6" /></>,
+    "02": <><rect x="3" y="3" width="6" height="6" rx="2" /><rect x="15" y="15" width="6" height="6" rx="2" /><path d="M9 6h5a4 4 0 0 1 4 4v5M15 12l3 3 3-3M9 18H6a3 3 0 0 1-3-3v-3" /></>,
+    "03": <><path d="M4 4v16h16M8 16v-5m5 5V7m5 9v-7" /></>,
+    "04": <><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z" /><path d="M20 3v4m-2-2h4" /></>,
+  };
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[number]}</svg>;
+}
 
 export default function Home() {
   const [demo, setDemo] = useState("morgen");
@@ -117,6 +133,11 @@ export default function Home() {
           </div>
         </div>
 
+        <figure className="hero-photo">
+          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=85" alt="Lichtdurchflutetes Büro mit offenen Arbeitsbereichen und Pflanzen" width="1600" height="650" decoding="async" />
+          <figcaption><span className="photo-caption-icon"><ServiceIcon number="04" /></span><span>Technologie im Hintergrund.<br /><strong>Menschen im Mittelpunkt.</strong></span></figcaption>
+        </figure>
+
         <div className="hero-bottom">
           <span>AUTOMAID</span>
           <span>
@@ -164,9 +185,10 @@ export default function Home() {
               className="service-card"
               key={service.number}
             >
-              <span className="service-number">
-                {service.number}
-              </span>
+              <div className="service-card-top">
+                <span className="service-icon"><ServiceIcon number={service.number} /></span>
+                <span className="service-number">{service.number}</span>
+              </div>
 
               <div>
                 <h3>{service.title}</h3>
@@ -226,13 +248,8 @@ export default function Home() {
               className="example-card"
               key={example.title}
             >
-              <div
-                className="example-visual"
-                aria-hidden="true"
-              >
-                <span className="visual-symbol">
-                  ✳
-                </span>
+              <div className="example-visual">
+                <img src={`https://images.unsplash.com/${example.image}?auto=format&fit=crop&w=800&q=80`} alt={example.alt} width="800" height="560" loading="lazy" decoding="async" />
               </div>
 
               <div className="example-body">
