@@ -74,8 +74,8 @@ section {
 
 .site-header .brand-logo {
   display: block;
-  width: 105px;
-  height: 30px;
+  width: 150px;
+  height: auto;
   object-fit: contain;
   object-position: left center;
   filter: brightness(0);
@@ -638,8 +638,7 @@ section {
   }
 
   .site-header .brand-logo {
-    width: 90px;
-    height: 26px;
+    width: 125px;
   }
 
   .nav-links {
